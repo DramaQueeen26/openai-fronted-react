@@ -3,7 +3,7 @@ export async function* prosConsStreamGeneratorUseCase( prompt: string, abortSign
 
   try {
     
-    const resp = await fetch(`${ import.meta.env.VITE_GPT_API }/pros-cons-stream`, {
+    const resp = await fetch(`${ import.meta.env.VITE_GPT_API }/pros-cons-discusser-stream`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
