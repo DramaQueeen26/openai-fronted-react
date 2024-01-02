@@ -32,6 +32,7 @@ export const ProsConsStreamPage = () => {
     isRunning.current = true;
     setMessages( (prev) => [...prev, { text: text, isGpt: false }] );
 
+    //TODO: UseCase
     const stream = prosConsStreamGeneratorUseCase( text, abortController.current.signal );
     setIsLoading(false);
 

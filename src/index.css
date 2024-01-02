@@ -1,12 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html, body {
   background-color: #000000;
   color: white;
-  font-family: 'Poppins', sans-serif;  
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 
@@ -23,7 +23,7 @@ ul {
 }
 
 strong {
-  @apply font-bold text-indigo-400;
+  @apply font-bold text-indigo-400 text-xl;
 }
 
 em {

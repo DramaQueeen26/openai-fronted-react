@@ -1,6 +1,8 @@
-import { ProsConsResponse } from '../../interfaces';
+import type { ProsConsResponse } from '../../interfaces';
 
-export const prosConsDiscusserUseCase = async( prompt: string ) => {
+
+
+export const prosConsUseCase = async( prompt: string ) => {
 
   try {
     

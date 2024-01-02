@@ -1,5 +1,5 @@
 
-export async function* prosConsStreamGeneratorUseCase( prompt: string, abortSignal: AbortSignal )  {
+export const prosConsStreamUseCase = async( prompt: string ) => {
 
   try {
     
@@ -9,7 +9,7 @@ export async function* prosConsStreamGeneratorUseCase( prompt: string, abortSign
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ prompt }),
-      signal: abortSignal,
+      // todo: abortSignal
     });
 
     if ( !resp.ok ) throw new Error('No se pudo realizar la comparación');
@@ -20,21 +20,25 @@ export async function* prosConsStreamGeneratorUseCase( prompt: string, abortSign
       return null;
     }
 
+    return reader;
 
-    const decoder = new TextDecoder();
+    // const decoder = new TextDecoder();
 
-    let text = '';
+    // let text = '';
 
-    while( true ) {
-      const { value, done } = await reader.read();
-      if ( done ) {
-        break;
-      }
+    // while( true ) {
+    //   const { value, done } = await reader.read();
+    //   if ( done ) {
+    //     break;
+    //   }
 
-      const decodedChunk = decoder.decode( value, { stream: true } );
-      text += decodedChunk;
-      yield text;
-    }
+    //   const decodedChunk = decoder.decode( value, { stream: true } );
+    //   text += decodedChunk;
+    //   console.log(text);
+
+    // }
+
+
 
 
   } catch (error) {

@@ -3,12 +3,13 @@ import {
   GptMessage,
   MyMessage,
   TypingLoader,
+  TextMessageBox,
   TextMessageBoxSelect,
   GptMessageAudio,
 } from "../../components";
 import { textToAudioUseCase } from "../../../core/use-cases";
 
-const chatMessage = `## ¿Qué audio quieres generar hoy?
+const displaimer = `## ¿Qué audio quieres generar hoy?
 * Todo el audio generado es por AI.
 `;
 
@@ -72,7 +73,7 @@ export const TextToAudioPage = () => {
       <div className="chat-messages">
         <div className="grid grid-cols-12 gap-y-2">
           {/* Bienvenida */}
-          <GptMessage text={chatMessage} />
+          <GptMessage text={displaimer} />
 
           {messages.map((message, index) =>
             message.isGpt ? (

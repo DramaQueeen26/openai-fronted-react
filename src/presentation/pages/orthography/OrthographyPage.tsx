@@ -12,6 +12,9 @@ interface Message {
   }
 }
 
+
+
+
 export const OrthographyPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
@@ -32,10 +35,14 @@ export const OrthographyPage = () => {
         info: {errors,message,userScore}
       }]);
     }
+  
+    // Todo: Añadir el mensaje de isGPT en true
     
     
     setIsLoading(false);
   }
+
+
 
   return (
     <div className="chat-container">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GptMessage, MyMessage, TextMessageBox, TypingLoader } from '../../components';
-import { prosConsDiscusserUseCase } from '../../../core/use-cases';
+import { prosConsUseCase } from '../../../core/use-cases';
 
 
 interface Message {
@@ -22,7 +22,8 @@ export const ProsConsPage = () => {
     setIsLoading(true);
     setMessages( (prev) => [...prev, { text: text, isGpt: false }] );
 
-    const { ok, content } = await prosConsDiscusserUseCase( text );
+    //TODO: UseCase
+    const { ok, content } = await prosConsUseCase( text );
     setIsLoading(false);
 
     if ( !ok ) return;
